@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="card" *ngFor="let ejercicio of ejercicios">
+        <div class="card-header">
+            <h3>{{ejercicio.nombre}}</h3>
+        </div>
+        <div class="card-body">
+            <img src="/proyectogym/src/assets/ejercicios/">
+            <p>{{ejercicio.ejecucion}}</p>
+        </div>
+    </div>
+</div>
