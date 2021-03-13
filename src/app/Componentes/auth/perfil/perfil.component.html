@@ -1,0 +1,79 @@
+<div class="container" style="padding-top: 10px;">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="card">
+        <div class="card-body">
+            <div [hidden]="editarok==null" class="alert alert-success" role="alert">
+                <p>{{editarok}}</p>
+        </div>
+          <div class="row">
+            <div class="col-8" style="padding-left: 15px;">
+              <p class="card-text"><b>Nombre:</b> {{usuario.nombre}}</p>
+              <p class="card-text"><b>Apellidos:</b> {{usuario.apellidos}}</p>
+              <p class="card-text"><b>Email:</b> {{usuario.email}}</p>
+              <p class="card-text"><b>Usuario:</b> {{usuario.usuario}}</p>
+              <p class="card-text"><b>Fecha de nacimiento:</b> {{usuario.fechanac}}</p>
+              <p class="card-text"><b>Altura:</b> {{usuario.altura}}</p>
+              <p class="card-text"><b>Peso:</b> {{usuario.peso}}</p>
+              <p class="card-text"><b>IMC:</b> {{usuario.imc}}</p>
+            </div>
+          </div>
+          <br>
+          <button (click)="mostrarEditar=!mostrarEditar" class="btn btn-primary" style="margin-right: 5px;">Editar</button>
+          <button (click)="eliminarUser()" class="btn btn-danger">Eliminar</button>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="container" *ngIf="mostrarEditar" style="padding-top: 10px;">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="card">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8" style="padding-top: 5px;">
+              <div [hidden]="editarerr==null" class="alert alert-danger" role="alert">
+                <p>{{editarerr}}</p>
+              </div>
+              <form [formGroup]="formPerfil" (submit)="editarUser()">
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="nombre" [(ngModel)]="usuario.nombre"
+                    placeholder="Nombre...">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="apellidos" [(ngModel)]="usuario.apellidos"
+                    placeholder="Apellidos...">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="email" [(ngModel)]="usuario.email"
+                    placeholder="Email...">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" formControlName="password" [(ngModel)]="usuario.password"
+                      placeholder="Password...">
+                  </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="usuario" [(ngModel)]="usuario.usuario"
+                    placeholder="Usuario...">
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" formControlName="fechanac" [(ngModel)]="usuario.fechanac">
+                  </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="altura" [(ngModel)]="usuario.altura"
+                    placeholder="Altura...">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="peso" [(ngModel)]="usuario.peso"
+                      placeholder="Peso...">
+                </div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Guardar cambio</button>
+                </div>
+
+              </form>
+              <button (click)="mostrarEditar=!mostrarEditar" class="btn btn-success btn-block" style="margin-bottom: 5px;">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

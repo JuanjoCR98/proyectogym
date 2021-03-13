@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { EjerciciosService } from 'src/app/Servicios/ejercicios.service';
 import { Ejercicio } from 'src/app/Clases/ejercicio';
+import * as jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-ejercicios',
@@ -10,6 +11,8 @@ import { Ejercicio } from 'src/app/Clases/ejercicio';
 export class EjerciciosComponent implements OnInit {
   ejercicios: Ejercicio[] = []
   constructor(private servicioEjer:EjerciciosService) { }
+
+  @ViewChild('content') content: ElementRef;
 
   ngOnInit(): void {
     this.obtenerEjercicios();
@@ -25,4 +28,20 @@ export class EjerciciosComponent implements OnInit {
     )
   }
 
+  downloadPDF(){
+    let doc = new jsPDF();
+
+    let specialElementHandlers = {
+      '#editor' : function(element,renderer){
+        return true;
+      }
+    };
+    let content = this.content.nativeElement;
+
+    doc.fromHTML(content.innerHTML,15,15,{
+      'width' : 190,
+      'elementHandlers': specialElementHandlers
+    });
+    doc.save('ejercicio.pdf');
+  }
 }
