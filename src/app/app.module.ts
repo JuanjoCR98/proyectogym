@@ -11,6 +11,7 @@ import { PerfilComponent } from './Componentes/auth/perfil/perfil.component';
 import { RegistroComponent } from './Componentes/auth/registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EnviarTokenInterceptor } from './auth/enviar-token.interceptor';
+import { HomeComponent } from './Componentes/home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EnviarTokenInterceptor } from './auth/enviar-token.interceptor';
     NavegacionComponent,
     LoginComponent,
     PerfilComponent,
-    RegistroComponent
+    RegistroComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

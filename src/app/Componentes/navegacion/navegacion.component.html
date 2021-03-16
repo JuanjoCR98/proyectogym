@@ -1,23 +1,23 @@
-<nav>
+<nav class="transparent z-depth-0">
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <ng-template [ngIf]='!isLogged()' [ngIfElse]='salir'>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/registro">Registro</a>
+              <a class="nav-link" routerLink="/registro" style="color:#ccc">Registro</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/login">Login</a>
+              <a class="nav-link" routerLink="/login" style="color:#ccc">Login</a>
             </li>
           </ng-template>
           <ng-template #salir>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/ejercicios">Ejercicios</a>
+                <a class="nav-link" routerLink="/ejercicios" style="color:#ccc">Ejercicios</a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/perfil">Perfil</a>
+              <a class="nav-link" routerLink="/perfil" style="color:#ccc">Perfil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" (click)="doLogout()" routerLink='.'>Logout</a>
+              <a class="nav-link" (click)="doLogout()" routerLink='.' style="color:#ccc">Logout</a>
             </li>
           </ng-template>
       </ul>
