@@ -50,7 +50,7 @@ export class RegistroComponent implements OnInit {
           if (this.temporizador == null) {
             this.temporizador = setTimeout(() => {
               this.registrado = false
-              this.irHacia.navigate(["/"])
+              this.irHacia.navigate(["/login"])
             }, 2000);
 
           }

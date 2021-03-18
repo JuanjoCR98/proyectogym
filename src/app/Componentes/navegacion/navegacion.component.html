@@ -1,27 +1,54 @@
-<nav class="transparent z-depth-0">
+<ng-template [ngIf]='!isLogged()' [ngIfElse]='navegadorlogged'>
+  <nav class="transparent z-depth-0 navegador">
     <div class="nav-wrapper">
+      <div class="logonav"></div>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <ng-template [ngIf]='!isLogged()' [ngIfElse]='salir'>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/registro" style="color:#ccc">Registro</a>
+              <a class="nav-link" routerLink="/registro">Registro</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/login" style="color:#ccc">Login</a>
+              <a class="nav-link" routerLink="/login">Login</a>
             </li>
           </ng-template>
           <ng-template #salir>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/ejercicios" style="color:#ccc">Ejercicios</a>
+                <a class="nav-link" routerLink="/ejercicios">Ejercicios</a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/perfil" style="color:#ccc">Perfil</a>
+              <a class="nav-link" routerLink="/perfil">Perfil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" (click)="doLogout()" routerLink='.' style="color:#ccc">Logout</a>
+              <a class="nav-link" (click)="doLogout()" routerLink='.'>Logout</a>
             </li>
           </ng-template>
       </ul>
     </div>
   </nav>
-        
-
+</ng-template>
+<ng-template #navegadorlogged>
+  <nav class="navegadorlogged" style="background-color: rgb(24, 24, 24);">
+      <div class="logonav"></div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <ng-template [ngIf]='!isLogged()' [ngIfElse]='salir'>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/registro">Registro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+          </ng-template>
+          <ng-template #salir>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/ejercicios">Ejercicios</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/perfil">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="doLogout()" routerLink='.'>Logout</a>
+            </li>
+          </ng-template>
+      </ul>
+  </nav>
+</ng-template>

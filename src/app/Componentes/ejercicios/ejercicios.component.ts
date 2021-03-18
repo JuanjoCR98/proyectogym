@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { EjerciciosService } from 'src/app/Servicios/ejercicios.service';
 import { Ejercicio } from 'src/app/Clases/ejercicio';
-import * as jsPDF from 'jspdf';
+import * as html2pdf from 'html2pdf.js';
 
 @Component({
   selector: 'app-ejercicios',
@@ -11,8 +11,6 @@ import * as jsPDF from 'jspdf';
 export class EjerciciosComponent implements OnInit {
   ejercicios: Ejercicio[] = []
   constructor(private servicioEjer:EjerciciosService) { }
-
-  @ViewChild('content') content: ElementRef;
 
   ngOnInit(): void {
     this.obtenerEjercicios();
@@ -29,19 +27,17 @@ export class EjerciciosComponent implements OnInit {
   }
 
   downloadPDF(){
-    let doc = new jsPDF();
-
-    let specialElementHandlers = {
-      '#editor' : function(element,renderer){
-        return true;
-      }
+    const options = {
+      filename: 'ejercicios.pdf',
+      image: {type: 'jpeg'},
+      html2canvas:{},
+      jsPDF: {orientation: 'landscape'}
     };
-    let content = this.content.nativeElement;
+    const content: Element = document.getElementById('contenedorejer');
 
-    doc.fromHTML(content.innerHTML,15,15,{
-      'width' : 190,
-      'elementHandlers': specialElementHandlers
-    });
-    doc.save('ejercicio.pdf');
+    html2pdf()
+      .from(content)
+      .set(options)
+      .save();
   }
 }

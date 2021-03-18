@@ -1,31 +1,27 @@
-<div class="container" style="padding-top: 10px;">
-    <div class="shadow-lg p-3 mb-5 bg-white rounded">
-      <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8" style="padding-top: 5px;">
-          <div [hidden]="registrado!=true" class="alert alert-success" role="alert">
-            <p>Se ha registrado correctamente</p>
-          </div>
-          <div [hidden]="mensaje==null" class="alert alert-danger" role="alert">
-            <p>{{mensaje}}</p>
-          </div>
-  
-          <form [formGroup]="formRegister" (submit)="submit()">
-            <div class="form-group"><input type="text" class="form-control" formControlName="nombre" placeholder="Nombre..."></div>
-            <div class="form-group"><input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos..."></div>
-            <div class="form-group"><input type="password" class="form-control" formControlName="password" placeholder="Contraseña..."></div>
-            <div class="form-group"><input type="password" class="form-control" formControlName="password2" placeholder="Repite contraseña..."></div>
-            <div class="form-group"><input type="text" class="form-control" formControlName="email" placeholder="Email..."></div>
-            <div class="form-group"><input type="text" class="form-control" formControlName="usuario" placeholder="Usuario..."></div>
-            <div class="form-group"><input type="date" class="form-control" formControlName="fechanac" placeholder="Fecha de nacimiento..."></div>
-            <div class="form-group"><input type="number" class="form-control" formControlName="altura" placeholder="Altura..." hidden></div>
-            <div class="form-group"><input type="number" class="form-control" formControlName="peso" placeholder="Peso..." hidden></div>
-            <div class="form-group"><input type="file" class="form-control" formControlName="foto" hidden></div>
-            <div class="form-group"><input type="number" class="form-control" formControlName="imc" placeholder="imc..." hidden></div>
-            <div class="form-group"><input type="text" class="form-control" formControlName="roles" placeholder="Roles..." hidden></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Registrar</button></div>
-          </form>
-        </div>
-      </div>
+<section class="sectionregistro">
+  <div class="imagenfondoregistro"></div>
+  <div class="formularioregistro">
+    <div [hidden]="registrado!=true" class="alert alert-success" role="alert">
+      <p>Se ha registrado correctamente</p>
     </div>
+    <div [hidden]="mensaje==null" class="alert alert-danger" role="alert">
+      <p>{{mensaje}}</p>
+    </div>
+
+    <form [formGroup]="formRegister" (submit)="submit()">
+      <div class="form-group"><input type="text" class="form-control controlregistro" formControlName="nombre" placeholder="Nombre..."></div>
+      <div class="form-group"><input type="text" class="form-control controlregistro" formControlName="apellidos" placeholder="Apellidos..."></div>
+      <div class="form-group"><input type="password" class="form-control controlregistro" formControlName="password" placeholder="Contraseña..."></div>
+      <div class="form-group"><input type="password" class="form-control controlregistro" formControlName="password2" placeholder="Repite contraseña..."></div>
+      <div class="form-group"><input type="text" class="form-control controlregistro" formControlName="email" placeholder="Email..."></div>
+      <div class="form-group"><input type="text" class="form-control controlregistro" formControlName="usuario" placeholder="Usuario..."></div>
+      <div class="form-group"><input type="date" class="form-control controlregistro" formControlName="fechanac" placeholder="Fecha de nacimiento..."></div>
+      <div class="form-group"><input type="number" class="form-control controlregistro" formControlName="altura" placeholder="Altura..." hidden></div>
+      <div class="form-group"><input type="number" class="form-control controlregistro" formControlName="peso" placeholder="Peso..." hidden></div>
+      <div class="form-group"><input type="file" class="form-control controlregistro" formControlName="foto" hidden></div>
+      <div class="form-group"><input type="number" class="form-control controlregistro" formControlName="imc" placeholder="imc..." hidden></div>
+      <div class="form-group"><input type="text" class="form-control controlregistro" formControlName="roles" placeholder="Roles..." hidden></div>
+      <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Registrar</button></div>
+    </form>
   </div>
+</section>

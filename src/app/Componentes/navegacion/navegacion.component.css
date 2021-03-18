@@ -1,0 +1,33 @@
+.navegador{
+    position:absolute;
+    height: 15%;
+}
+.navegador ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-family:'Raleway';
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.navegadorlogged{
+    position: absolute;
+    background-color: black;
+    height: 10%;
+}
+.navegadorlogged ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-family:'Raleway';
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.logonav{
+    background: url("/assets/logos/logo7white.png")no-repeat center;
+    background-size: cover;
+    width: 200px;
+    height: 100px;
+    float:left;
+}

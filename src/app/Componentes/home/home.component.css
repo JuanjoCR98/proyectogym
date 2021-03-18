@@ -1,5 +1,11 @@
 .fondo{
-    background: url("/proyectogym/src/assets/fondos/training.jpg") no-repeat center;
+    top: 0;
+    bottom: 0;
+    width:100%;
+}
+
+.imagenfondo{
+    background: url("/assets/fondos/training.jpg")no-repeat center;
     background-size: cover;
-    min-height: 100vh;
+    height: 100vh;
 }

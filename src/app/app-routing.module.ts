@@ -5,6 +5,7 @@ import { PerfilComponent } from './Componentes/auth/perfil/perfil.component';
 import { RegistroComponent } from './Componentes/auth/registro/registro.component';
 import { EjerciciosComponent } from './Componentes/ejercicios/ejercicios.component';
 import { HomeComponent } from './Componentes/home/home.component';
+import { NavegacionComponent } from './Componentes/navegacion/navegacion.component';
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
