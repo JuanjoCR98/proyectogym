@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { EjerciciosService } from 'src/app/Servicios/ejercicios.service';
 import { Ejercicio } from 'src/app/Clases/ejercicio';
-import * as html2pdf from 'html2pdf.js';
 
 @Component({
   selector: 'app-ejercicios',
@@ -26,6 +25,9 @@ export class EjerciciosComponent implements OnInit {
     )
   }
 
+  /*
+  
+import * as html2pdf from 'html2pdf.js';
   downloadPDF(){
     const options = {
       filename: 'ejercicios.pdf',
@@ -39,5 +41,5 @@ export class EjerciciosComponent implements OnInit {
       .from(content)
       .set(options)
       .save();
-  }
+  }*/
 }
